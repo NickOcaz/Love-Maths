@@ -79,7 +79,7 @@ function calculateCorrectAnswer() {
     } else if (operator === "x") {
         return [operand1 * operand2, "multiply"];
     } else if (operator === "-") {
-        return [operand1 * operand2, "subtract"];
+        return [operand1 - operand2, "subtract"];
     } else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -114,11 +114,26 @@ function displayAdditionQuestion(operand1, operand2) {
     document.getElementById('operator').textContent = "+";
     
 }
-
+/**
+ * This function demonstrates the use of the ternary operator.
+ * The ternary operator is a shorthand for an if-else statement.
+ * It takes three parts: a condition, a value if the condition is true, and a value if the condition is false.
+ * 
+ * Syntax: condition ? valueIfTrue : valueIfFalse
+ * 
+ * Example:
+ * This function returns the larger of two numbers using the ternary operator.
+ * 
+ * @param {number} operand1 - The first number.
+ * @param {number} operand2 - The second number.
+ * @returns {number} The larger of the two numbers.
+ */
 function displaySubtractQuestion(operand1, operand2) {
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
+     // If operand1 is greater than operand2, return operand1; otherwise, return operand2
+    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById('operand2').textContent = operand1 > operand1 ? operand1 : operand1;
     document.getElementById('operator').textContent = "-";
+    
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
